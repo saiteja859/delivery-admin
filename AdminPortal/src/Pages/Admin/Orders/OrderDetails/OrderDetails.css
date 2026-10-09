@@ -1,0 +1,645 @@
+.order-details-page {
+  width: 100%;
+
+  animation: detailsEnter 0.5s ease forwards;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.order-details-header {
+  margin-bottom: 22px;
+}
+
+.back-orders-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  margin-bottom: 17px;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #748091;
+
+  font-size: 11px;
+  font-weight: 650;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.back-orders-button:hover {
+  color: var(--primary);
+
+  transform: translateX(-3px);
+}
+
+.order-details-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.details-eyebrow {
+  margin-bottom: 5px;
+
+  color: var(--primary);
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 1.8px;
+}
+
+.order-details-heading h2 {
+  margin-bottom: 4px;
+
+  font-size: 28px;
+  font-weight: 760;
+
+  letter-spacing: -0.7px;
+}
+
+.order-details-heading p {
+  color: #8b94a2;
+
+  font-size: 11px;
+}
+
+.details-delivered-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 8px 12px;
+
+  border-radius: 30px;
+
+  background: #ecfbf3;
+  color: var(--success);
+
+  font-size: 10px;
+  font-weight: 750;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.order-details-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+
+  margin-bottom: 18px;
+}
+
+.details-card {
+  min-width: 0;
+
+  padding: 22px;
+
+  border: 1px solid var(--border);
+  border-radius: 18px;
+
+  background: var(--white);
+
+  box-shadow:
+    0 3px 15px rgba(23, 32, 51, 0.025);
+}
+
+.details-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  margin-bottom: 21px;
+}
+
+.details-card-header > svg {
+  color: #a1aab7;
+}
+
+.details-card-label {
+  margin-bottom: 4px;
+
+  color: var(--primary);
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+.details-card-header h3 {
+  font-size: 16px;
+  font-weight: 720;
+}
+
+
+/* =========================
+   PRODUCT
+========================= */
+
+.details-product {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  padding-bottom: 20px;
+
+  border-bottom: 1px solid #eef0f3;
+}
+
+.details-product-image {
+  width: 75px;
+  height: 75px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #eef8fd,
+      #f4effb
+    );
+
+  color: var(--primary);
+}
+
+.details-product-info h4 {
+  margin-bottom: 5px;
+
+  font-size: 14px;
+}
+
+.details-product-info p {
+  margin-bottom: 7px;
+
+  color: #8993a1;
+
+  font-size: 10px;
+}
+
+.details-product-info span {
+  color: var(--primary);
+
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.product-total-row {
+  display: flex;
+  justify-content: space-between;
+
+  padding-top: 17px;
+
+  color: #87909d;
+
+  font-size: 11px;
+}
+
+.product-total-row strong {
+  color: var(--text);
+
+  font-size: 13px;
+}
+
+
+/* =========================
+   CUSTOMER
+========================= */
+
+.customer-details-profile,
+.supplier-details-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-bottom: 19px;
+}
+
+.large-customer-avatar {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #e8f5fd,
+      #f0eafa
+    );
+
+  color: var(--primary);
+
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.customer-details-profile h4,
+.supplier-details-profile h4 {
+  margin-bottom: 4px;
+
+  font-size: 13px;
+}
+
+.customer-details-profile span,
+.supplier-details-profile span {
+  color: #939ca9;
+
+  font-size: 10px;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.contact-details > div {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  color: #7c8795;
+
+  font-size: 10px;
+}
+
+.contact-details svg {
+  color: var(--primary);
+}
+
+
+/* =========================
+   SUPPLIER
+========================= */
+
+.supplier-logo {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  background: var(--primary-gradient);
+
+  color: white;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+
+/* =========================
+   ADDRESS
+========================= */
+
+.delivery-address {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+
+  padding: 15px;
+
+  border-radius: 13px;
+
+  background: #fafbfc;
+}
+
+.address-icon {
+  width: 35px;
+  height: 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 10px;
+
+  background: #eef7fd;
+
+  color: var(--primary);
+}
+
+.delivery-address p {
+  padding-top: 2px;
+
+  color: #687383;
+
+  font-size: 11px;
+  line-height: 1.65;
+}
+
+
+/* =========================
+   BOTTOM GRID
+========================= */
+
+.order-bottom-grid {
+  display: grid;
+
+  grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.75fr);
+
+  gap: 18px;
+
+  margin-bottom: 18px;
+}
+
+
+/* =========================
+   TIMELINE
+========================= */
+
+.delivery-timeline {
+  padding-top: 3px;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.timeline-icon {
+  width: 31px;
+  height: 31px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #ecfbf3;
+
+  color: var(--success);
+}
+
+.timeline-item > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.timeline-item strong {
+  font-size: 11px;
+}
+
+.timeline-item span {
+  color: #9aa3af;
+
+  font-size: 9px;
+}
+
+.timeline-line {
+  width: 1px;
+  height: 21px;
+
+  margin-left: 15px;
+
+  background: #dfe8e3;
+}
+
+
+/* =========================
+   PAYMENT
+========================= */
+
+.payment-method {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  padding: 13px;
+
+  margin-bottom: 18px;
+
+  border-radius: 13px;
+
+  background: #fafbfc;
+}
+
+.payment-method-icon {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: #eef7fd;
+
+  color: var(--primary);
+}
+
+.payment-method > div:nth-child(2) {
+  flex: 1;
+}
+
+.payment-method strong,
+.payment-method span {
+  display: block;
+}
+
+.payment-method strong {
+  margin-bottom: 3px;
+
+  font-size: 11px;
+}
+
+.payment-method span {
+  color: var(--success);
+
+  font-size: 9px;
+  font-weight: 650;
+}
+
+.payment-success {
+  color: var(--success);
+}
+
+.payment-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.payment-breakdown > div {
+  display: flex;
+  justify-content: space-between;
+
+  color: #8993a0;
+
+  font-size: 10px;
+}
+
+.payment-breakdown strong {
+  color: #5c6674;
+}
+
+.payment-total {
+  margin-top: 5px;
+  padding-top: 13px;
+
+  border-top: 1px solid #eef0f3;
+
+  color: var(--text) !important;
+
+  font-size: 12px !important;
+}
+
+.payment-total strong {
+  color: var(--text);
+
+  font-size: 16px;
+}
+
+
+/* =========================
+   STATUS BANNER
+========================= */
+
+.order-status-banner {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  padding: 16px 19px;
+
+  margin-bottom: 5px;
+
+  border: 1px solid rgba(53, 201, 160, 0.18);
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      100deg,
+      rgba(53, 201, 160, 0.07),
+      rgba(33, 150, 211, 0.04)
+    );
+}
+
+.status-banner-icon {
+  width: 39px;
+  height: 39px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background: white;
+
+  color: var(--accent);
+
+  box-shadow:
+    0 4px 12px rgba(23, 32, 51, 0.05);
+}
+
+.order-status-banner > div:nth-child(2) {
+  flex: 1;
+}
+
+.order-status-banner strong,
+.order-status-banner span {
+  display: block;
+}
+
+.order-status-banner strong {
+  margin-bottom: 3px;
+
+  font-size: 11px;
+}
+
+.order-status-banner span {
+  color: #8993a0;
+
+  font-size: 9px;
+}
+
+.order-status-banner > svg {
+  color: #9aa4b1;
+}
+
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes detailsEnter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  .order-details-grid,
+  .order-bottom-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .order-details-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .order-details-heading h2 {
+    font-size: 24px;
+  }
+
+  .details-card {
+    padding: 18px;
+  }
+
+  .order-status-banner {
+    align-items: flex-start;
+  }
+}

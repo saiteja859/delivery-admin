@@ -1,0 +1,1553 @@
+/* ======================================================
+   DELIVERY REGISTER PAGE
+====================================================== */
+
+.delivery-register-page {
+  min-height: 100vh;
+  padding: 40px 20px;
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(33, 150, 211, 0.09),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 90% 85%,
+      rgba(123, 76, 194, 0.09),
+      transparent 30%
+    ),
+    #f7f9fc;
+
+  color: #172033;
+}
+
+/* ======================================================
+   DECORATION
+====================================================== */
+
+.delivery-register-decoration {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.delivery-register-decoration span {
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  filter: blur(1px);
+  opacity: 0.55;
+}
+
+.delivery-register-decoration span:nth-child(1) {
+  width: 280px;
+  height: 280px;
+  top: -120px;
+  left: -90px;
+  background: rgba(33, 150, 211, 0.08);
+}
+
+.delivery-register-decoration span:nth-child(2) {
+  width: 360px;
+  height: 360px;
+  right: -160px;
+  top: 20%;
+  background: rgba(123, 76, 194, 0.07);
+}
+
+.delivery-register-decoration span:nth-child(3) {
+  width: 240px;
+  height: 240px;
+  bottom: -100px;
+  left: 20%;
+  background: rgba(53, 201, 160, 0.07);
+}
+
+/* ======================================================
+   MAIN CARD
+====================================================== */
+
+.delivery-register-card {
+  width: min(100%, 940px);
+  position: relative;
+  z-index: 1;
+
+  padding: 32px;
+
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 24px;
+
+  box-shadow:
+    0 24px 70px rgba(23, 32, 51, 0.09),
+    0 6px 20px rgba(23, 32, 51, 0.04);
+}
+
+/* ======================================================
+   BACK BUTTON
+====================================================== */
+
+.delivery-register-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-bottom: 28px;
+  padding: 0;
+
+  border: 0;
+  background: transparent;
+
+  color: #64748b;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.delivery-register-back:hover {
+  color: #2196d3;
+  transform: translateX(-3px);
+}
+
+/* ======================================================
+   BRAND
+====================================================== */
+
+.delivery-register-brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  margin-bottom: 34px;
+}
+
+.delivery-register-logo {
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 15px;
+
+  background: linear-gradient(
+    135deg,
+    #2196d3,
+    #7b4cc2
+  );
+
+  color: #ffffff;
+
+  box-shadow:
+    0 10px 24px rgba(33, 150, 211, 0.2);
+}
+
+.delivery-register-brand h1 {
+  margin: 0;
+
+  color: #172033;
+
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.delivery-register-brand h1 span {
+  color: #2196d3;
+}
+
+.delivery-register-brand p {
+  margin: 3px 0 0;
+
+  color: #94a3b8;
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2.2px;
+}
+
+/* ======================================================
+   HEADING
+====================================================== */
+
+.delivery-register-heading {
+  margin-bottom: 30px;
+}
+
+.delivery-register-heading > span {
+  display: inline-flex;
+  align-items: center;
+
+  margin-bottom: 12px;
+
+  color: #2196d3;
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+}
+
+.delivery-register-heading h2 {
+  margin: 0;
+
+  color: #172033;
+
+  font-size: clamp(31px, 4vw, 43px);
+  line-height: 1.08;
+  letter-spacing: -1.5px;
+}
+
+.delivery-register-heading h2 strong {
+  color: #7b4cc2;
+  font-weight: 800;
+}
+
+.delivery-register-heading p {
+  max-width: 690px;
+
+  margin: 15px 0 0;
+
+  color: #64748b;
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* ======================================================
+   STATUS LOOKUP
+====================================================== */
+
+.delivery-register-status-lookup {
+  margin: 0 0 30px;
+  padding: 22px;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(33, 150, 211, 0.035),
+      rgba(123, 76, 194, 0.035)
+    );
+
+  box-shadow:
+    0 8px 24px rgba(23, 32, 51, 0.035);
+}
+
+.delivery-register-status-lookup-heading {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  margin-bottom: 17px;
+}
+
+.delivery-register-status-lookup-icon {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 12px;
+
+  background: rgba(33, 150, 211, 0.1);
+  color: #2196d3;
+}
+
+.delivery-register-status-lookup-heading h3 {
+  margin: 0 0 3px;
+
+  color: #172033;
+
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.delivery-register-status-lookup-heading p {
+  margin: 0;
+
+  color: #7b8798;
+
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.delivery-register-status-form {
+  display: flex;
+  gap: 10px;
+}
+
+.delivery-register-status-email {
+  min-width: 0;
+  flex: 1;
+
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 0 14px;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.delivery-register-status-email:focus-within {
+  border-color: #2196d3;
+
+  box-shadow:
+    0 0 0 3px rgba(33, 150, 211, 0.09);
+}
+
+.delivery-register-status-email svg {
+  flex-shrink: 0;
+  color: #94a3b8;
+}
+
+.delivery-register-status-email input {
+  width: 100%;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+
+  color: #172033;
+
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.delivery-register-status-email input::placeholder {
+  color: #a0aabd;
+}
+
+.delivery-register-status-check-button {
+  min-width: 140px;
+
+  height: 48px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 0 18px;
+
+  border: 0;
+  border-radius: 12px;
+
+  background: linear-gradient(
+    135deg,
+    #2196d3,
+    #7b4cc2
+  );
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 18px rgba(33, 150, 211, 0.16);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.delivery-register-status-check-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 11px 22px rgba(33, 150, 211, 0.22);
+}
+
+.delivery-register-status-check-button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* ======================================================
+   STATUS ERROR
+====================================================== */
+
+.delivery-register-status-error {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+
+  margin-top: 12px;
+  padding: 11px 13px;
+
+  border: 1px solid rgba(220, 38, 38, 0.15);
+  border-radius: 10px;
+
+  background: rgba(220, 38, 38, 0.055);
+
+  color: #dc2626;
+}
+
+.delivery-register-status-error > span {
+  width: 19px;
+  height: 19px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #dc2626;
+
+  color: #ffffff;
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.delivery-register-status-error p {
+  margin: 1px 0 0;
+
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* ======================================================
+   APPLICATION STATUS CARD
+====================================================== */
+
+.delivery-register-status-card {
+  display: flex;
+  gap: 16px;
+
+  margin-top: 18px;
+  padding: 20px;
+
+  border-radius: 16px;
+
+  border: 1px solid #e5e7eb;
+
+  animation: deliveryStatusReveal 0.3s ease;
+}
+
+@keyframes deliveryStatusReveal {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.delivery-register-status-pending {
+  background: rgba(245, 158, 11, 0.045);
+  border-color: rgba(245, 158, 11, 0.2);
+}
+
+.delivery-register-status-approved {
+  background: rgba(22, 163, 74, 0.045);
+  border-color: rgba(22, 163, 74, 0.18);
+}
+
+.delivery-register-status-rejected {
+  background: rgba(220, 38, 38, 0.04);
+  border-color: rgba(220, 38, 38, 0.18);
+}
+
+.delivery-register-status-icon {
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 13px;
+}
+
+.delivery-register-status-pending
+  .delivery-register-status-icon {
+  background: rgba(245, 158, 11, 0.12);
+  color: #d97706;
+}
+
+.delivery-register-status-approved
+  .delivery-register-status-icon {
+  background: rgba(22, 163, 74, 0.11);
+  color: #16a34a;
+}
+
+.delivery-register-status-rejected
+  .delivery-register-status-icon {
+  background: rgba(220, 38, 38, 0.1);
+  color: #dc2626;
+}
+
+.delivery-register-status-content {
+  min-width: 0;
+  flex: 1;
+}
+
+.delivery-register-status-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  margin-bottom: 7px;
+}
+
+.delivery-register-status-label {
+  color: #7b8798;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+}
+
+.delivery-register-status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 24px;
+
+  padding: 4px 9px;
+
+  border-radius: 999px;
+
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.8px;
+}
+
+.delivery-register-status-pending
+  .delivery-register-status-badge {
+  background: rgba(245, 158, 11, 0.12);
+  color: #b45309;
+}
+
+.delivery-register-status-approved
+  .delivery-register-status-badge {
+  background: rgba(22, 163, 74, 0.11);
+  color: #15803d;
+}
+
+.delivery-register-status-rejected
+  .delivery-register-status-badge {
+  background: rgba(220, 38, 38, 0.1);
+  color: #b91c1c;
+}
+
+.delivery-register-status-content h3 {
+  margin: 0;
+
+  color: #172033;
+
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+}
+
+.delivery-register-status-content > p {
+  margin: 7px 0 0;
+
+  color: #64748b;
+
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+/* ======================================================
+   STATUS META
+====================================================== */
+
+.delivery-register-status-meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+
+  margin-top: 16px;
+}
+
+.delivery-register-status-meta > div {
+  padding: 11px 12px;
+
+  border: 1px solid rgba(229, 231, 235, 0.9);
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.delivery-register-status-meta span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #94a3b8;
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+}
+
+.delivery-register-status-meta strong {
+  display: block;
+
+  overflow: hidden;
+
+  color: #334155;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ======================================================
+   STATUS ACTIONS
+====================================================== */
+
+.delivery-register-status-action {
+  min-height: 44px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  margin-top: 16px;
+  padding: 0 17px;
+
+  border: 0;
+  border-radius: 11px;
+
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.delivery-register-status-action:hover {
+  transform: translateY(-1px);
+}
+
+.delivery-register-status-login {
+  background: linear-gradient(
+    135deg,
+    #2196d3,
+    #7b4cc2
+  );
+
+  box-shadow:
+    0 8px 18px rgba(33, 150, 211, 0.17);
+}
+
+.delivery-register-status-login:hover {
+  box-shadow:
+    0 11px 22px rgba(33, 150, 211, 0.23);
+}
+
+.delivery-register-status-reapply {
+  background: linear-gradient(
+    135deg,
+    #dc2626,
+    #c026d3
+  );
+
+  box-shadow:
+    0 8px 18px rgba(220, 38, 38, 0.15);
+}
+
+.delivery-register-status-reapply:hover {
+  box-shadow:
+    0 11px 22px rgba(220, 38, 38, 0.2);
+}
+
+/* ======================================================
+   REJECTION REASON
+====================================================== */
+
+.delivery-register-rejection-box {
+  margin-top: 16px;
+  padding: 14px;
+
+  border: 1px solid rgba(220, 38, 38, 0.15);
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.delivery-register-rejection-heading {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  margin-bottom: 7px;
+
+  color: #b91c1c;
+
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.delivery-register-rejection-box p {
+  margin: 0;
+
+  color: #475569;
+
+  font-size: 12px;
+  line-height: 1.65;
+  white-space: pre-wrap;
+}
+
+.delivery-register-reapply-note {
+  max-width: 620px;
+
+  margin: 9px 0 0 !important;
+
+  color: #94a3b8 !important;
+
+  font-size: 10px !important;
+  line-height: 1.55 !important;
+}
+
+/* ======================================================
+   DIVIDER
+====================================================== */
+
+.delivery-register-divider {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  margin: 30px 0;
+}
+
+.delivery-register-divider span {
+  height: 1px;
+  flex: 1;
+
+  background: #e5e7eb;
+}
+
+.delivery-register-divider p {
+  margin: 0;
+
+  color: #94a3b8;
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+  white-space: nowrap;
+}
+
+/* ======================================================
+   FORM HEADING
+====================================================== */
+
+.delivery-register-form-heading {
+  margin-bottom: 24px;
+}
+
+/* ======================================================
+   FORM
+====================================================== */
+
+.delivery-register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* ======================================================
+   FORM SECTION
+====================================================== */
+
+.delivery-register-section {
+  padding: 21px;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 17px;
+
+  background: #ffffff;
+}
+
+.delivery-register-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  margin-bottom: 18px;
+}
+
+.delivery-register-section-heading > div:first-child {
+  width: 37px;
+  height: 37px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 10px;
+
+  background: rgba(33, 150, 211, 0.08);
+  color: #2196d3;
+}
+
+.delivery-register-section-heading h3 {
+  margin: 0;
+
+  color: #172033;
+
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.delivery-register-section-heading p {
+  margin: 3px 0 0;
+
+  color: #94a3b8;
+
+  font-size: 11px;
+}
+
+/* ======================================================
+   FORM GRID
+====================================================== */
+
+.delivery-register-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.delivery-register-field {
+  min-width: 0;
+}
+
+.delivery-register-field-full {
+  grid-column: 1 / -1;
+}
+
+.delivery-register-field label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  margin-bottom: 7px;
+
+  color: #334155;
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.delivery-register-field label span {
+  padding: 3px 7px;
+
+  border-radius: 999px;
+
+  background: #f1f5f9;
+
+  color: #94a3b8;
+
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+/* ======================================================
+   INPUT
+====================================================== */
+
+.delivery-register-input {
+  min-height: 46px;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 0 13px;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 11px;
+
+  background: #ffffff;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.delivery-register-input:focus-within {
+  border-color: #2196d3;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 0 0 3px rgba(33, 150, 211, 0.08);
+}
+
+.delivery-register-input svg {
+  flex-shrink: 0;
+
+  color: #94a3b8;
+
+  transition: color 0.2s ease;
+}
+
+.delivery-register-input:focus-within svg {
+  color: #2196d3;
+}
+
+.delivery-register-input input,
+.delivery-register-input textarea {
+  width: 100%;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+
+  color: #172033;
+
+  font-family: inherit;
+
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.delivery-register-input input {
+  height: 44px;
+}
+
+.delivery-register-input textarea {
+  resize: vertical;
+
+  min-height: 72px;
+
+  padding: 12px 0;
+}
+
+.delivery-register-input input::placeholder,
+.delivery-register-input textarea::placeholder {
+  color: #a3adbb;
+}
+
+.delivery-register-input input:disabled,
+.delivery-register-input textarea:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+/* ======================================================
+   TEXTAREA
+====================================================== */
+
+.delivery-register-textarea-wrapper {
+  align-items: flex-start;
+
+  padding-top: 0;
+}
+
+.delivery-register-textarea-wrapper > svg {
+  margin-top: 14px;
+}
+
+/* ======================================================
+   ERROR
+====================================================== */
+
+.delivery-register-error {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+
+  padding: 12px 14px;
+
+  border: 1px solid rgba(220, 38, 38, 0.15);
+  border-radius: 11px;
+
+  background: rgba(220, 38, 38, 0.05);
+
+  color: #dc2626;
+}
+
+.delivery-register-error > span {
+  width: 20px;
+  height: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #dc2626;
+
+  color: #ffffff;
+
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.delivery-register-error p {
+  margin: 1px 0 0;
+
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* ======================================================
+   SUBMIT AREA
+====================================================== */
+
+.delivery-register-submit-area {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  padding-top: 4px;
+}
+
+.delivery-register-security-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  max-width: 430px;
+}
+
+.delivery-register-security-note svg {
+  flex-shrink: 0;
+
+  color: #35c9a0;
+}
+
+.delivery-register-security-note p {
+  margin: 0;
+
+  color: #94a3b8;
+
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.delivery-register-submit {
+  min-width: 220px;
+  height: 48px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  padding: 0 20px;
+
+  border: 0;
+  border-radius: 12px;
+
+  background: linear-gradient(
+    135deg,
+    #2196d3,
+    #7b4cc2
+  );
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 22px rgba(33, 150, 211, 0.18);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.delivery-register-submit:hover:not(:disabled) {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 13px 27px rgba(33, 150, 211, 0.24);
+}
+
+.delivery-register-submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* ======================================================
+   SPINNER
+====================================================== */
+
+.delivery-register-spinner {
+  animation: deliveryRegisterSpin 0.8s linear infinite;
+}
+
+@keyframes deliveryRegisterSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ======================================================
+   SUCCESS CARD
+====================================================== */
+
+.delivery-register-success-card {
+  max-width: 760px;
+  min-height: 620px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.delivery-register-success {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 32px 20px 42px;
+
+  text-align: center;
+}
+
+.delivery-register-success-icon {
+  width: 76px;
+  height: 76px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 20px;
+
+  border-radius: 24px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(33, 150, 211, 0.12),
+    rgba(123, 76, 194, 0.12)
+  );
+
+  color: #2196d3;
+
+  box-shadow:
+    0 12px 30px rgba(33, 150, 211, 0.1);
+}
+
+.delivery-register-success-label {
+  margin-bottom: 10px;
+
+  color: #2196d3;
+
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1.8px;
+}
+
+.delivery-register-success h2 {
+  max-width: 600px;
+
+  margin: 0;
+
+  color: #172033;
+
+  font-size: clamp(27px, 4vw, 38px);
+  line-height: 1.15;
+  letter-spacing: -1px;
+}
+
+.delivery-register-success h2 strong {
+  display: block;
+
+  color: #7b4cc2;
+
+  font-weight: 800;
+}
+
+.delivery-register-success > p {
+  max-width: 570px;
+
+  margin: 15px auto 0;
+
+  color: #64748b;
+
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.delivery-register-success-box {
+  width: min(100%, 540px);
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+
+  margin-top: 25px;
+}
+
+.delivery-register-success-box > div {
+  padding: 13px 14px;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+
+  background: #f8fafc;
+
+  text-align: left;
+}
+
+.delivery-register-success-box span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #94a3b8;
+
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.delivery-register-success-box strong {
+  display: block;
+
+  overflow: hidden;
+
+  color: #334155;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.delivery-register-success-note {
+  margin-top: 16px !important;
+
+  color: #94a3b8 !important;
+
+  font-size: 11px !important;
+}
+
+.delivery-register-login-button,
+.delivery-register-secondary-button {
+  min-width: 230px;
+  height: 46px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  border-radius: 11px;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.delivery-register-login-button {
+  margin-top: 17px;
+
+  border: 0;
+
+  background: linear-gradient(
+    135deg,
+    #2196d3,
+    #7b4cc2
+  );
+
+  color: #ffffff;
+
+  box-shadow:
+    0 9px 21px rgba(33, 150, 211, 0.18);
+}
+
+.delivery-register-login-button:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 12px 25px rgba(33, 150, 211, 0.24);
+}
+
+.delivery-register-secondary-button {
+  margin-top: 9px;
+
+  border: 1px solid #e5e7eb;
+
+  background: #ffffff;
+
+  color: #64748b;
+}
+
+.delivery-register-secondary-button:hover {
+  transform: translateY(-1px);
+
+  border-color: #cbd5e1;
+
+  color: #334155;
+}
+
+/* ======================================================
+   FOOTER
+====================================================== */
+
+.delivery-register-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  margin-top: 25px;
+  padding-top: 20px;
+
+  border-top: 1px solid #eef0f4;
+}
+
+.delivery-register-footer span {
+  width: 24px;
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    #2196d3,
+    #7b4cc2
+  );
+}
+
+.delivery-register-footer p {
+  margin: 0;
+
+  color: #a0aabd;
+
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* ======================================================
+   RESPONSIVE - TABLET
+====================================================== */
+
+@media (max-width: 760px) {
+  .delivery-register-page {
+    padding: 20px 12px;
+  }
+
+  .delivery-register-card {
+    padding: 23px 18px;
+    border-radius: 20px;
+  }
+
+  .delivery-register-brand {
+    margin-bottom: 27px;
+  }
+
+  .delivery-register-heading h2 {
+    font-size: 31px;
+  }
+
+  .delivery-register-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .delivery-register-field-full {
+    grid-column: auto;
+  }
+
+  .delivery-register-status-form {
+    flex-direction: column;
+  }
+
+  .delivery-register-status-check-button {
+    width: 100%;
+  }
+
+  .delivery-register-submit-area {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .delivery-register-security-note {
+    max-width: none;
+  }
+
+  .delivery-register-submit {
+    width: 100%;
+  }
+
+  .delivery-register-success-box {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ======================================================
+   RESPONSIVE - MOBILE
+====================================================== */
+
+@media (max-width: 520px) {
+  .delivery-register-page {
+    padding: 10px;
+  }
+
+  .delivery-register-card {
+    padding: 20px 14px;
+
+    border-radius: 17px;
+  }
+
+  .delivery-register-logo {
+    width: 46px;
+    height: 46px;
+  }
+
+  .delivery-register-brand h1 {
+    font-size: 18px;
+  }
+
+  .delivery-register-heading h2 {
+    font-size: 28px;
+  }
+
+  .delivery-register-heading p {
+    font-size: 12px;
+  }
+
+  .delivery-register-status-lookup {
+    padding: 16px;
+  }
+
+  .delivery-register-status-lookup-heading {
+    align-items: flex-start;
+  }
+
+  .delivery-register-status-card {
+    flex-direction: column;
+    padding: 16px;
+  }
+
+  .delivery-register-status-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .delivery-register-status-top {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .delivery-register-status-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .delivery-register-status-action {
+    width: 100%;
+  }
+
+  .delivery-register-section {
+    padding: 16px;
+  }
+
+  .delivery-register-section-heading {
+    align-items: flex-start;
+  }
+
+  .delivery-register-section-heading > div:first-child {
+    width: 34px;
+    height: 34px;
+  }
+
+  .delivery-register-success {
+    padding: 22px 8px 32px;
+  }
+
+  .delivery-register-success-icon {
+    width: 68px;
+    height: 68px;
+  }
+
+  .delivery-register-success h2 {
+    font-size: 27px;
+  }
+
+  .delivery-register-login-button,
+  .delivery-register-secondary-button {
+    width: 100%;
+    min-width: 0;
+  }
+}

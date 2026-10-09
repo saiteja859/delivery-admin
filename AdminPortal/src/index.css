@@ -1,0 +1,19 @@
+:root {
+  --primary: #2196D3;
+  --secondary: #7B4CC2;
+  --accent: #35C9A0;
+
+  --text: #172033;
+  --background: #F7F9FC;
+  --white: #FFFFFF;
+  --border: #E5E7EB;
+
+  --success: #16A34A;
+  --error: #DC2626;
+
+  --primary-gradient: linear-gradient(
+    135deg,
+    #2196D3,
+    #7B4CC2
+  );
+}

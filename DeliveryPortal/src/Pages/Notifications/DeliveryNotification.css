@@ -1,0 +1,468 @@
+
+/* =========================================
+   DELIVERY NOTIFICATIONS PAGE
+========================================= */
+
+.delivery-notification-page {
+  min-height: 100%;
+  padding: 30px;
+  background: #f7f9fc;
+  box-sizing: border-box;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.delivery-notification-header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 22px;
+  margin-bottom: 28px;
+}
+
+.delivery-notification-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 13px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #172033;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.delivery-notification-back:hover {
+  color: #2196d3;
+  border-color: #2196d3;
+  background: #f8fcff;
+  transform: translateX(-2px);
+}
+
+.delivery-notification-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.delivery-notification-title-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 14px;
+  color: #ffffff;
+  background: linear-gradient(
+    135deg,
+    #2196d3,
+    #7b4cc2
+  );
+  box-shadow:
+    0 8px 20px rgba(33, 150, 211, 0.2);
+}
+
+.delivery-notification-title h1 {
+  margin: 0;
+  color: #172033;
+  font-size: 25px;
+  font-weight: 750;
+  line-height: 1.2;
+}
+
+.delivery-notification-title p {
+  margin: 5px 0 0;
+  color: #667085;
+  font-size: 13px;
+}
+
+/* =========================================
+   MARK ALL
+========================================= */
+
+.delivery-notification-mark-all {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 0 15px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #172033;
+  font-size: 13px;
+  font-weight: 650;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.delivery-notification-mark-all:hover {
+  color: #ffffff;
+  border-color: transparent;
+  background: linear-gradient(
+    135deg,
+    #2196d3,
+    #7b4cc2
+  );
+  box-shadow:
+    0 7px 18px rgba(33, 150, 211, 0.2);
+}
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.delivery-notification-content {
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   STATES
+========================================= */
+
+.delivery-notification-state {
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  background: #ffffff;
+  color: #98a2b3;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.delivery-notification-state h3 {
+  margin: 15px 0 4px;
+  color: #172033;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.delivery-notification-state p {
+  margin: 7px 0 0;
+  color: #667085;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.delivery-notification-state.error {
+  color: #dc2626;
+  border-color: rgba(220, 38, 38, 0.15);
+  background: #fffafa;
+}
+
+.delivery-notification-state.error p {
+  color: #dc2626;
+}
+
+.delivery-notification-state.error button {
+  margin-top: 16px;
+  padding: 9px 16px;
+  border: none;
+  border-radius: 9px;
+  color: #ffffff;
+  background: #dc2626;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* =========================================
+   NOTIFICATION LIST
+========================================= */
+
+.delivery-notification-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* =========================================
+   NOTIFICATION CARD
+========================================= */
+
+.delivery-notification-card {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 18px 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow:
+    0 3px 12px rgba(23, 32, 51, 0.04);
+  cursor: pointer;
+  box-sizing: border-box;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.delivery-notification-card:hover {
+  transform: translateY(-2px);
+  border-color: #d6dce7;
+  box-shadow:
+    0 10px 26px rgba(23, 32, 51, 0.08);
+}
+
+/* =========================================
+   UNREAD CARD
+========================================= */
+
+.delivery-notification-card.unread {
+  border-color: rgba(33, 150, 211, 0.3);
+  background: linear-gradient(
+    90deg,
+    rgba(33, 150, 211, 0.055),
+    #ffffff 42%
+  );
+}
+
+.delivery-notification-card.unread::before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  bottom: 15px;
+  left: 0;
+  width: 3px;
+  border-radius: 0 4px 4px 0;
+  background: linear-gradient(
+    180deg,
+    #2196d3,
+    #7b4cc2
+  );
+}
+
+/* =========================================
+   NOTIFICATION ICON
+========================================= */
+
+.delivery-notification-icon {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 13px;
+  color: #2196d3;
+  background: rgba(33, 150, 211, 0.1);
+}
+
+.delivery-notification-icon svg {
+  width: 21px;
+  height: 21px;
+}
+
+.delivery-notification-card.unread
+  .delivery-notification-icon {
+  color: #ffffff;
+  background: linear-gradient(
+    135deg,
+    #2196d3,
+    #7b4cc2
+  );
+}
+
+/* Approval */
+.delivery-notification-icon.delivery-approval {
+  color: #16a34a;
+  background: rgba(22, 163, 74, 0.1);
+}
+
+.delivery-notification-card.unread
+  .delivery-notification-icon.delivery-approval {
+  color: #ffffff;
+  background: #16a34a;
+}
+
+/* Rejection */
+.delivery-notification-icon.delivery-rejection {
+  color: #dc2626;
+  background: rgba(220, 38, 38, 0.1);
+}
+
+.delivery-notification-card.unread
+  .delivery-notification-icon.delivery-rejection {
+  color: #ffffff;
+  background: #dc2626;
+}
+
+/* =========================================
+   BODY
+========================================= */
+
+.delivery-notification-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.delivery-notification-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.delivery-notification-card-header h3 {
+  margin: 0;
+  color: #172033;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.delivery-notification-card.read
+  .delivery-notification-card-header h3 {
+  font-weight: 600;
+}
+
+.delivery-notification-body > p {
+  margin: 6px 0 8px;
+  color: #667085;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* =========================================
+   NEW BADGE
+========================================= */
+
+.delivery-notification-new {
+  display: inline-flex;
+  align-items: center;
+  min-height: 20px;
+  padding: 0 7px;
+  border-radius: 20px;
+  color: #ffffff;
+  background: linear-gradient(
+    135deg,
+    #2196d3,
+    #7b4cc2
+  );
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+/* =========================================
+   DATE
+========================================= */
+
+.delivery-notification-date {
+  display: block;
+  color: #98a2b3;
+  font-size: 11px;
+}
+
+/* =========================================
+   UNREAD DOT
+========================================= */
+
+.delivery-notification-unread-dot {
+  width: 8px;
+  height: 8px;
+  margin-top: 7px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #2196d3;
+  box-shadow:
+    0 0 0 4px rgba(33, 150, 211, 0.1);
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 850px) {
+  .delivery-notification-header {
+    grid-template-columns: 1fr auto;
+  }
+
+  .delivery-notification-back {
+    grid-column: 1 / -1;
+    width: fit-content;
+  }
+
+  .delivery-notification-content {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .delivery-notification-page {
+    padding: 20px 15px;
+  }
+
+  .delivery-notification-header {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+  }
+
+  .delivery-notification-title {
+    align-items: flex-start;
+  }
+
+  .delivery-notification-title h1 {
+    font-size: 21px;
+  }
+
+  .delivery-notification-mark-all {
+    width: fit-content;
+  }
+
+  .delivery-notification-card {
+    gap: 11px;
+    padding: 15px;
+  }
+
+  .delivery-notification-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 11px;
+  }
+
+  .delivery-notification-card-header {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .delivery-notification-card-header h3 {
+    font-size: 14px;
+  }
+
+  .delivery-notification-body > p {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 420px) {
+  .delivery-notification-title-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .delivery-notification-card {
+    padding: 13px;
+  }
+
+  .delivery-notification-unread-dot {
+    display: none;
+  }
+}

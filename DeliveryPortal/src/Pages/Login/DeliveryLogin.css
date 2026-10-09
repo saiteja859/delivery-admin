@@ -1,0 +1,787 @@
+.delivery-login-page {
+min-height: 100vh;
+position: relative;
+overflow: hidden;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 30px;
+background:
+radial-gradient(
+circle at 10% 15%,
+rgba(33, 150, 211, 0.15),
+transparent 30%
+),
+radial-gradient(
+circle at 90% 85%,
+rgba(123, 76, 194, 0.15),
+transparent 30%
+),
+#f7f9fc;
+}
+
+.delivery-login-decoration {
+position: absolute;
+inset: 0;
+pointer-events: none;
+}
+
+.delivery-login-decoration span {
+position: absolute;
+display: block;
+border: 1px solid rgba(33, 150, 211, 0.08);
+border-radius: 50%;
+animation: deliveryFloat 9s ease-in-out infinite;
+}
+
+.delivery-login-decoration span:nth-child(1) {
+width: 330px;
+height: 330px;
+top: -140px;
+left: -110px;
+}
+
+.delivery-login-decoration span:nth-child(2) {
+width: 430px;
+height: 430px;
+right: -190px;
+bottom: -190px;
+animation-delay: 2s;
+animation-duration: 11s;
+}
+
+.delivery-login-decoration span:nth-child(3) {
+width: 170px;
+height: 170px;
+top: 12%;
+right: 17%;
+animation-delay: 4s;
+animation-duration: 7s;
+}
+
+.delivery-login-card {
+width: 100%;
+max-width: 460px;
+position: relative;
+z-index: 2;
+padding: 35px;
+border: 1px solid rgba(229, 231, 235, 0.9);
+border-radius: 25px;
+background: rgba(255, 255, 255, 0.94);
+box-shadow:
+0 30px 80px rgba(23, 32, 51, 0.1),
+0 5px 20px rgba(23, 32, 51, 0.04);
+backdrop-filter: blur(18px);
+animation: loginCardIn 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.delivery-login-brand {
+display: flex;
+align-items: center;
+gap: 13px;
+margin-bottom: 38px;
+animation: fadeSlideUp 0.7s ease 0.15s both;
+}
+
+.delivery-login-logo {
+width: 50px;
+height: 50px;
+flex-shrink: 0;
+display: flex;
+align-items: center;
+justify-content: center;
+color: #ffffff;
+border-radius: 14px;
+background: var(--primary-gradient);
+box-shadow:
+0 10px 25px rgba(76, 93, 196, 0.2),
+0 0 0 rgba(33, 150, 211, 0);
+animation:
+logoFloat 3s ease-in-out infinite,
+logoGlow 3s ease-in-out infinite;
+}
+
+.delivery-login-logo svg {
+transition: transform 0.35s ease;
+}
+
+.delivery-login-logo:hover svg {
+transform: rotate(-8deg) scale(1.08);
+}
+
+.delivery-login-brand h1 {
+color: var(--text);
+font-size: 19px;
+letter-spacing: -0.5px;
+}
+
+.delivery-login-brand h1 span {
+background: linear-gradient(
+90deg,
+#2196d3,
+#7b4cc2,
+#2196d3
+);
+background-size: 200% auto;
+-webkit-background-clip: text;
+background-clip: text;
+color: transparent;
+animation: gradientText 4s linear infinite;
+}
+
+.delivery-login-brand p {
+margin-top: 3px;
+color: var(--secondary);
+font-size: 8px;
+font-weight: 800;
+letter-spacing: 1.7px;
+animation: letterReveal 0.8s ease 0.4s both;
+}
+
+.delivery-login-heading {
+margin-bottom: 25px;
+animation: fadeSlideUp 0.7s ease 0.25s both;
+}
+
+.delivery-login-heading > span {
+display: inline-block;
+color: var(--primary);
+font-size: 9px;
+font-weight: 800;
+letter-spacing: 1.8px;
+animation: labelReveal 0.7s ease 0.35s both;
+}
+
+.delivery-login-heading h2 {
+margin-top: 8px;
+color: var(--text);
+font-size: 31px;
+line-height: 1.08;
+letter-spacing: -1.1px;
+}
+
+.delivery-login-heading h2 strong {
+background: linear-gradient(
+90deg,
+#2196d3,
+#7b4cc2,
+#2196d3
+);
+background-size: 200% auto;
+-webkit-background-clip: text;
+background-clip: text;
+color: transparent;
+animation: gradientText 4s linear infinite;
+}
+
+.delivery-login-heading p {
+max-width: 365px;
+margin-top: 11px;
+color: #7d8797;
+font-size: 11px;
+line-height: 1.65;
+animation: fadeSlideUp 0.7s ease 0.45s both;
+}
+
+.delivery-login-form {
+display: flex;
+flex-direction: column;
+gap: 17px;
+animation: fadeSlideUp 0.7s ease 0.35s both;
+}
+
+.delivery-login-field {
+animation: fieldIn 0.6s ease both;
+}
+
+.delivery-login-field:nth-child(1) {
+animation-delay: 0.45s;
+}
+
+.delivery-login-field:nth-child(2) {
+animation-delay: 0.55s;
+}
+
+.delivery-login-field label {
+display: block;
+margin-bottom: 7px;
+color: #566174;
+font-size: 10px;
+font-weight: 700;
+transition: color 0.25s ease;
+}
+
+.delivery-login-field:focus-within label {
+color: var(--primary);
+}
+
+.delivery-login-input {
+height: 47px;
+padding: 0 13px;
+display: flex;
+align-items: center;
+gap: 9px;
+border: 1px solid #e3e7ed;
+border-radius: 10px;
+color: #99a2b0;
+background: #ffffff;
+transition:
+border-color 0.25s ease,
+box-shadow 0.25s ease,
+transform 0.25s ease;
+}
+
+.delivery-login-input:hover {
+border-color: #cbd4df;
+transform: translateY(-1px);
+}
+
+.delivery-login-input:focus-within {
+border-color: rgba(33, 150, 211, 0.65);
+box-shadow:
+0 0 0 4px rgba(33, 150, 211, 0.08),
+0 8px 20px rgba(33, 150, 211, 0.07);
+transform: translateY(-2px);
+}
+
+.delivery-login-input svg {
+transition:
+color 0.25s ease,
+transform 0.25s ease;
+}
+
+.delivery-login-input:focus-within svg {
+color: var(--primary);
+transform: scale(1.08);
+}
+
+.delivery-login-input input {
+width: 100%;
+height: 100%;
+border: none;
+outline: none;
+color: var(--text);
+background: transparent;
+font-size: 11px;
+}
+
+.delivery-login-input input::placeholder {
+color: #b0b7c2;
+transition: opacity 0.2s ease;
+}
+
+.delivery-login-input:focus-within input::placeholder {
+opacity: 0.5;
+}
+
+.delivery-login-error {
+padding: 10px 12px;
+display: flex;
+align-items: center;
+gap: 9px;
+border: 1px solid rgba(220, 38, 38, 0.14);
+border-radius: 9px;
+color: var(--error);
+background: rgba(220, 38, 38, 0.05);
+animation: errorShake 0.4s ease;
+}
+
+.delivery-login-error span {
+width: 19px;
+height: 19px;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-shrink: 0;
+border-radius: 50%;
+color: #ffffff;
+background: var(--error);
+font-size: 11px;
+font-weight: 800;
+animation: errorPulse 1.5s ease-in-out infinite;
+}
+
+.delivery-login-error p {
+font-size: 9px;
+font-weight: 600;
+}
+
+.delivery-login-button {
+height: 49px;
+margin-top: 3px;
+padding: 0 16px 0 20px;
+position: relative;
+overflow: hidden;
+display: flex;
+align-items: center;
+justify-content: space-between;
+border: none;
+border-radius: 11px;
+color: #ffffff;
+background: linear-gradient(
+135deg,
+#2196d3,
+#7b4cc2,
+#2196d3
+);
+background-size: 200% 200%;
+font-size: 11px;
+font-weight: 800;
+box-shadow:
+0 10px 25px rgba(76, 93, 196, 0.2);
+transition:
+transform 0.25s ease,
+box-shadow 0.25s ease;
+animation:
+buttonIn 0.7s ease 0.65s both,
+buttonGradient 5s ease infinite;
+}
+
+.delivery-login-button::before {
+content: "";
+position: absolute;
+top: 0;
+left: -100%;
+width: 70%;
+height: 100%;
+background: linear-gradient(
+100deg,
+transparent,
+rgba(255, 255, 255, 0.22),
+transparent
+);
+transform: skewX(-20deg);
+transition: left 0.6s ease;
+}
+
+.delivery-login-button:hover::before {
+left: 130%;
+}
+
+.delivery-login-button:hover {
+transform: translateY(-3px);
+box-shadow:
+0 15px 32px rgba(76, 93, 196, 0.3);
+}
+
+.delivery-login-button:active {
+transform: translateY(-1px) scale(0.99);
+}
+
+.delivery-login-button span,
+.delivery-login-button svg {
+position: relative;
+z-index: 1;
+}
+
+.delivery-login-button svg {
+transition:
+transform 0.3s ease,
+opacity 0.3s ease;
+}
+
+.delivery-login-button:hover svg {
+transform: translateX(5px);
+}
+
+.delivery-login-features {
+margin-top: 22px;
+padding-top: 17px;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 24px;
+border-top: 1px solid #eef0f3;
+animation: fadeSlideUp 0.7s ease 0.8s both;
+}
+
+.delivery-login-features div {
+display: flex;
+align-items: center;
+gap: 5px;
+color: #8791a0;
+transition:
+color 0.25s ease,
+transform 0.25s ease;
+}
+
+.delivery-login-features div:hover {
+color: var(--text);
+transform: translateY(-2px);
+}
+
+.delivery-login-features svg {
+color: var(--accent);
+transition: transform 0.3s ease;
+}
+
+.delivery-login-features div:hover svg {
+transform: scale(1.12);
+}
+
+.delivery-login-features span {
+font-size: 8px;
+font-weight: 700;
+}
+
+.delivery-login-footer {
+margin-top: 23px;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 7px;
+animation: fadeSlideUp 0.7s ease 0.9s both;
+}
+
+.delivery-login-footer span {
+width: 6px;
+height: 6px;
+border-radius: 50%;
+background: var(--accent);
+box-shadow:
+0 0 0 4px rgba(53, 201, 160, 0.1);
+animation: onlinePulse 2s ease-in-out infinite;
+}
+
+.delivery-login-footer p {
+color: #9ca4b1;
+font-size: 8px;
+}
+
+@keyframes loginCardIn {
+0% {
+opacity: 0;
+transform: translateY(30px) scale(0.96);
+}
+
+60% {
+opacity: 1;
+transform: translateY(-4px) scale(1.005);
+}
+
+100% {
+opacity: 1;
+transform: translateY(0) scale(1);
+}
+}
+
+@keyframes fadeSlideUp {
+from {
+opacity: 0;
+transform: translateY(14px);
+}
+
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+@keyframes fieldIn {
+from {
+opacity: 0;
+transform: translateX(-10px);
+}
+
+to {
+opacity: 1;
+transform: translateX(0);
+}
+}
+
+@keyframes logoFloat {
+0%,
+100% {
+transform: translateY(0) rotate(0deg);
+}
+
+50% {
+transform: translateY(-4px) rotate(1deg);
+}
+}
+
+@keyframes logoGlow {
+0%,
+100% {
+box-shadow:
+0 10px 25px rgba(76, 93, 196, 0.2),
+0 0 0 rgba(33, 150, 211, 0);
+}
+
+50% {
+box-shadow:
+0 14px 30px rgba(76, 93, 196, 0.25),
+0 0 22px rgba(33, 150, 211, 0.08);
+}
+}
+
+@keyframes gradientText {
+0% {
+background-position: 0% center;
+}
+
+100% {
+background-position: 200% center;
+}
+}
+
+@keyframes letterReveal {
+from {
+opacity: 0;
+letter-spacing: 0;
+}
+
+to {
+opacity: 1;
+letter-spacing: 1.7px;
+}
+}
+
+@keyframes labelReveal {
+from {
+opacity: 0;
+transform: translateX(-8px);
+}
+
+to {
+opacity: 1;
+transform: translateX(0);
+}
+}
+
+@keyframes buttonIn {
+from {
+opacity: 0;
+transform: translateY(10px);
+}
+
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+@keyframes buttonGradient {
+0% {
+background-position: 0% 50%;
+}
+
+50% {
+background-position: 100% 50%;
+}
+
+100% {
+background-position: 0% 50%;
+}
+}
+
+@keyframes deliveryFloat {
+0%,
+100% {
+transform: translate(0, 0) scale(1);
+}
+
+50% {
+transform: translate(10px, -12px) scale(1.02);
+}
+}
+
+@keyframes errorShake {
+0% {
+transform: translateX(0);
+}
+
+25% {
+transform: translateX(-5px);
+}
+
+50% {
+transform: translateX(5px);
+}
+
+75% {
+transform: translateX(-3px);
+}
+
+100% {
+transform: translateX(0);
+}
+}
+
+@keyframes errorPulse {
+0%,
+100% {
+transform: scale(1);
+}
+
+50% {
+transform: scale(1.08);
+}
+}
+
+@keyframes onlinePulse {
+0%,
+100% {
+box-shadow:
+0 0 0 4px rgba(53, 201, 160, 0.1);
+}
+
+50% {
+box-shadow:
+0 0 0 7px rgba(53, 201, 160, 0.04);
+}
+}
+
+@media (max-width: 520px) {
+.delivery-login-page {
+padding: 15px;
+}
+
+.delivery-login-card {
+padding: 26px 21px;
+border-radius: 20px;
+}
+
+.delivery-login-brand {
+margin-bottom: 30px;
+}
+
+.delivery-login-heading h2 {
+font-size: 27px;
+}
+
+.delivery-login-features {
+gap: 13px;
+}
+}
+
+@media (prefers-reduced-motion: reduce) {
+.delivery-login-page *,
+.delivery-login-page *::before,
+.delivery-login-page *::after {
+animation-duration: 0.01ms !important;
+animation-iteration-count: 1 !important;
+transition-duration: 0.01ms !important;
+}
+}
+
+.delivery-login-spinner {
+  animation: delivery-login-spin 0.8s linear infinite;
+}
+
+.delivery-login-button:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+@keyframes delivery-login-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =====================================================
+   DELIVERY PARTNER REGISTRATION
+   ===================================================== */
+
+.delivery-login-register {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #eef0f4;
+}
+
+.delivery-login-register-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.delivery-login-register-line span {
+  display: none;
+}
+
+.delivery-login-register-line p {
+  margin: 0;
+  color: #98a2b3;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  text-align: center;
+}
+
+.delivery-login-register-button {
+  width: 100%;
+  min-height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  padding: 0 18px;
+
+  border: 1px solid #dce3eb;
+  border-radius: 12px;
+
+  color: #344054;
+  background: #ffffff;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.delivery-login-register-button svg {
+  color: #2196d3;
+  transition: color 0.2s ease;
+}
+
+.delivery-login-register-button:hover {
+  border-color: #2196d3;
+  color: #2196d3;
+  background: #f8fcff;
+  box-shadow:
+    0 7px 18px rgba(33, 150, 211, 0.08);
+  transform: translateY(-1px);
+}
+
+.delivery-login-register-button:hover svg {
+  color: #2196d3;
+}
+
+.delivery-login-register-button:active {
+  transform: translateY(0);
+}
+
+.delivery-login-register-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.delivery-login-register-note {
+  margin: 8px 0 0;
+
+  color: #98a2b3;
+
+  font-size: 10px;
+  line-height: 1.5;
+  text-align: center;
+}
+
