@@ -1,8 +1,14 @@
+-- ========================================================
+-- Shop All Goods Unified Database Schema & Initial Seed
+-- Database: shop_all_goods
+-- ========================================================
+
 CREATE DATABASE IF NOT EXISTS shop_all_goods;
 
 USE shop_all_goods;
 
-CREATE TABLE users (
+-- 1. USERS
+CREATE TABLE IF NOT EXISTS users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     full_name VARCHAR(100) NOT NULL,
     email VARCHAR(150) NOT NULL UNIQUE,
@@ -14,7 +20,20 @@ CREATE TABLE users (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
-CREATE TABLE customers (
+-- 2. ADMINS
+CREATE TABLE IF NOT EXISTS admins (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL UNIQUE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT fk_admins_user
+        FOREIGN KEY (user_id)
+        REFERENCES users(id)
+        ON DELETE CASCADE
+);
+
+-- 3. CUSTOMERS
+CREATE TABLE IF NOT EXISTS customers (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL UNIQUE,
     address TEXT,
@@ -29,7 +48,8 @@ CREATE TABLE customers (
         ON DELETE CASCADE
 );
 
-CREATE TABLE delivery_partners (
+-- 4. DELIVERY PARTNERS
+CREATE TABLE IF NOT EXISTS delivery_partners (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL UNIQUE,
     vehicle_type VARCHAR(50),
@@ -50,7 +70,8 @@ CREATE TABLE delivery_partners (
         ON DELETE CASCADE
 );
 
-CREATE TABLE suppliers (
+-- 5. SUPPLIERS
+CREATE TABLE IF NOT EXISTS suppliers (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL UNIQUE,
     business_name VARCHAR(150) NOT NULL,
@@ -67,7 +88,8 @@ CREATE TABLE suppliers (
         ON DELETE CASCADE
 );
 
-CREATE TABLE products (
+-- 6. PRODUCTS
+CREATE TABLE IF NOT EXISTS products (
     id INT AUTO_INCREMENT PRIMARY KEY,
     supplier_id INT,
     product_name VARCHAR(150) NOT NULL,
@@ -87,7 +109,8 @@ CREATE TABLE products (
         ON DELETE SET NULL
 );
 
-CREATE TABLE orders (
+-- 7. ORDERS
+CREATE TABLE IF NOT EXISTS orders (
     id INT AUTO_INCREMENT PRIMARY KEY,
     order_number VARCHAR(50) NOT NULL UNIQUE,
     customer_id INT NOT NULL,
@@ -128,7 +151,8 @@ CREATE TABLE orders (
         ON DELETE SET NULL
 );
 
-CREATE TABLE order_items (
+-- 8. ORDER ITEMS
+CREATE TABLE IF NOT EXISTS order_items (
     id INT AUTO_INCREMENT PRIMARY KEY,
     order_id INT NOT NULL,
     product_id INT NOT NULL,
@@ -146,7 +170,8 @@ CREATE TABLE order_items (
         REFERENCES products(id)
 );
 
-CREATE TABLE deliveries (
+-- 9. DELIVERIES
+CREATE TABLE IF NOT EXISTS deliveries (
     id INT AUTO_INCREMENT PRIMARY KEY,
     order_id INT NOT NULL UNIQUE,
     delivery_partner_id INT,
@@ -176,7 +201,8 @@ CREATE TABLE deliveries (
         ON DELETE SET NULL
 );
 
-CREATE TABLE delivery_locations (
+-- 10. DELIVERY LOCATIONS
+CREATE TABLE IF NOT EXISTS delivery_locations (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     delivery_id INT NOT NULL,
     latitude DECIMAL(10,7) NOT NULL,
@@ -189,7 +215,8 @@ CREATE TABLE delivery_locations (
         ON DELETE CASCADE
 );
 
-CREATE TABLE notifications (
+-- 11. NOTIFICATIONS
+CREATE TABLE IF NOT EXISTS notifications (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
     title VARCHAR(200) NOT NULL,
@@ -204,7 +231,8 @@ CREATE TABLE notifications (
         ON DELETE CASCADE
 );
 
-CREATE TABLE payments (
+-- 12. PAYMENTS
+CREATE TABLE IF NOT EXISTS payments (
     id INT AUTO_INCREMENT PRIMARY KEY,
     order_id INT NOT NULL,
     transaction_id VARCHAR(150) UNIQUE,
@@ -225,13 +253,27 @@ CREATE TABLE payments (
         ON DELETE CASCADE
 );
 
-CREATE TABLE admins (
+-- 13. DELIVERY PARTNER REGISTRATIONS
+CREATE TABLE IF NOT EXISTS delivery_partner_registrations (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT NOT NULL UNIQUE,
+    full_name VARCHAR(100) NOT NULL,
+    email VARCHAR(150) NOT NULL,
+    phone VARCHAR(20) NOT NULL,
+    password_hash VARCHAR(255),
+    license_number VARCHAR(50),
+    address TEXT,
+    city VARCHAR(100),
+    state VARCHAR(100),
+    pincode VARCHAR(10),
+    registration_status ENUM('PENDING', 'APPROVED', 'REJECTED') DEFAULT 'PENDING',
+    rejection_reason TEXT,
+    reviewed_by INT,
+    reviewed_at DATETIME,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 
-    CONSTRAINT fk_admins_user
-        FOREIGN KEY (user_id)
+    CONSTRAINT fk_delivery_partner_registrations_reviewer
+        FOREIGN KEY (reviewed_by)
         REFERENCES users(id)
-        ON DELETE CASCADE
+        ON DELETE SET NULL
 );

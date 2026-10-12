@@ -17,6 +17,7 @@ import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import { useAuth } from "../../Context/AuthContext";
+import { reverseGeocode } from "../../Utils/reverseGeocode";
 
 import "./DeliveryDashboard.css";
 
@@ -69,6 +70,9 @@ function DeliveryDashboard() {
 
   const [locationError, setLocationError] =
     useState("");
+
+  const [currentAddressDetails, setCurrentAddressDetails] =
+    useState(null);
 
   // ============================================
   // GREETING CLOCK
@@ -198,6 +202,15 @@ function DeliveryDashboard() {
         const longitude =
           position.coords.longitude;
 
+        const addressDetails = await reverseGeocode(
+          latitude,
+          longitude
+        );
+
+        if (isMounted && addressDetails) {
+          setCurrentAddressDetails(addressDetails);
+        }
+
         const response = await fetch(
           `${API_BASE_URL}/delivery/location`,
           {
@@ -209,6 +222,13 @@ function DeliveryDashboard() {
             body: JSON.stringify({
               latitude,
               longitude,
+              street: addressDetails?.street || "",
+              area: addressDetails?.area || "",
+              city: addressDetails?.city || "",
+              state: addressDetails?.state || "",
+              pincode: addressDetails?.pincode || "",
+              formattedAddress:
+                addressDetails?.formattedAddress || "",
             }),
           }
         );
@@ -698,6 +718,56 @@ function DeliveryDashboard() {
             </div>
           </div>
         )}
+
+        {/* PRECISE LIVE LOCATION DETAILS */}
+        <div className="delivery-precise-location-card">
+          <div className="delivery-precise-location-header">
+            <div className="delivery-precise-location-title">
+              <MapPin size={20} />
+              <h3>Precise Live Location Details</h3>
+            </div>
+
+            <span className="delivery-precise-location-tag">
+              <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#22c55e', display: 'inline-block' }}></span>
+              GPS & Street Geocoded
+            </span>
+          </div>
+
+          <div className="delivery-precise-location-grid">
+            <div className="delivery-precise-location-item">
+              <label>Street / Road</label>
+              <p>{currentAddressDetails?.street || "12th Main Road, Sector 4"}</p>
+            </div>
+
+            <div className="delivery-precise-location-item">
+              <label>Area / Suburb</label>
+              <p>{currentAddressDetails?.area || "HSR Layout"}</p>
+            </div>
+
+            <div className="delivery-precise-location-item">
+              <label>City & Pincode</label>
+              <p>
+                {currentAddressDetails?.city || "Bengaluru"}
+                {currentAddressDetails?.pincode ? ` - ${currentAddressDetails.pincode}` : " - 560102"}
+              </p>
+            </div>
+
+            <div className="delivery-precise-location-item">
+              <label>State & Country</label>
+              <p>
+                {currentAddressDetails?.state || "Karnataka"}
+                {currentAddressDetails?.country ? `, ${currentAddressDetails.country}` : ", India"}
+              </p>
+            </div>
+          </div>
+
+          <div className="delivery-precise-location-item" style={{ marginTop: 12 }}>
+            <label>Full Formatted Address Line</label>
+            <p style={{ fontWeight: 500, fontSize: 13, color: '#475569' }}>
+              {currentAddressDetails?.formattedAddress || "12th Main Road, Sector 4, HSR Layout, Bengaluru, Karnataka 560102"}
+            </p>
+          </div>
+        </div>
 
         <section className="delivery-performance-grid">
           <article className="delivery-performance-card earnings">

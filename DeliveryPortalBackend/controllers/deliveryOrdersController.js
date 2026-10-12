@@ -71,6 +71,12 @@ const getDeliveryOrders = async (req, res) => {
 
         dp.current_latitude,
         dp.current_longitude,
+        dp.current_street,
+        dp.current_area,
+        dp.current_city,
+        dp.current_state,
+        dp.current_pincode,
+        dp.current_formatted_address,
         dp.location_updated_at
 
       FROM deliveries d
@@ -208,6 +214,24 @@ const getDeliveryOrders = async (req, res) => {
 
           longitude:
             delivery.current_longitude,
+
+          street:
+            delivery.current_street || "",
+
+          area:
+            delivery.current_area || "",
+
+          city:
+            delivery.current_city || "",
+
+          state:
+            delivery.current_state || "",
+
+          pincode:
+            delivery.current_pincode || "",
+
+          formattedAddress:
+            delivery.current_formatted_address || "",
 
           locationUpdatedAt:
             delivery.location_updated_at,
